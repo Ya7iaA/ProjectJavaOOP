@@ -1,22 +1,31 @@
 package ProjectJavaOOP.Restaurant.Model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Customer extends User {
 
-    private ArrayList<User> customerList;
+    private List<Order> customerOrder = new ArrayList<>();
 
-    public void userRegister(String customerUser, String customerPassword, String passwordConfirm) {
-        if (customerPassword.equals(passwordConfirm)) {
-            setUserName(customerUser);
-            setUserPassword(customerPassword);
-        } else {
-            System.out.println("Not Matched Password");
+    public Customer(String customerName, String customerPassword) {
+        super(customerName, customerPassword);
+    }
+
+    public void viewMenu(ArrayList<Dish> menu) {
+        System.out.println("===== Our Menu =====");
+        System.out.println("ID      Name      Price");
+        for (Dish dish : menu) {
+            System.out.println(dish.getDishID() + "      " + dish.getDishName() + "      " + dish.getDishPrice() + "$");
         }
     }
 
-    @Override
-    public void userLogin(String customerUser, String customerPassword) {
+    public Order makeOrder(Dish dish, int quantity) {
+        Order order = new Order(dish, quantity, this);
+        customerOrder.add(order);
+        return order;
+    }
 
+    public List<Order> getCustomerOrder() {
+        return customerOrder;
     }
 }
