@@ -6,5 +6,5 @@ public interface DeliveryService {
 
     void viewOrders();
 
-    void updateOrderStatue(String orderID, OrderStatus orderStatue);
+    void updateOrderStatue(int orderID, OrderStatus orderStatue);
 }

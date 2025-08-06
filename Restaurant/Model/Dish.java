@@ -2,12 +2,13 @@ package ProjectJavaOOP.Restaurant.Model;
 
 public class Dish {
 
+    private static int dishCount = 1;
     private int dishID;
     private String dishName;
     private double dishPrice;
 
-    public Dish(int dishID, String dishName, double dishPrice) {
-        this.dishID = dishID;
+    public Dish(String dishName, double dishPrice) {
+        this.dishID = dishCount;
         this.dishName = dishName;
         this.dishPrice = dishPrice;
     }
@@ -30,5 +31,10 @@ public class Dish {
 
     public int getDishID() {
         return dishID;
+    }
+
+    @Override
+    public String toString() {
+        return "Dish [dishID=" + dishID + ", dishName=" + dishName + ", dishPrice=" + dishPrice + "]";
     }
 }

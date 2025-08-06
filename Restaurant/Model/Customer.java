@@ -11,7 +11,7 @@ public class Customer extends User {
         super(customerName, customerPassword);
     }
 
-    public void viewMenu(ArrayList<Dish> menu) {
+    public void viewMenu(List<Dish> menu) {
         System.out.println("===== Our Menu =====");
         System.out.println("ID      Name      Price");
         for (Dish dish : menu) {

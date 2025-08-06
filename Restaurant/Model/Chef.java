@@ -9,7 +9,7 @@ public class Chef extends User {
     }
 
     public Dish addDish(int dishID, String dishName, double dishPrice) {
-        return new Dish(dishID, dishName, dishPrice);
+        return new Dish(dishName, dishPrice);
     }
 
     public void editDish(Dish dish, String dishName, double dishPrice) {

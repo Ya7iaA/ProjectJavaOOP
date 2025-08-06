@@ -40,4 +40,10 @@ public class Order {
     public void setOrderStatue(OrderStatus orderStatus) {
         this.orderStatus = orderStatus;
     }
+
+    @Override
+    public String toString() {
+        return "Order [orderID=" + orderID + ", customer=" + customer + ", dish=" + dish + ", orderQuantity="
+                + orderQuantity + ", orderStatus=" + orderStatus + "]";
+    }
 }

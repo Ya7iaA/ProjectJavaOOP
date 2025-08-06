@@ -10,5 +10,5 @@ public interface ChefService {
 
     void viewOrder();
 
-    void updateOrderStatue(String orderID, OrderStatus orderStatus);
+    void updateOrderStatue(int orderID, OrderStatus orderStatus);
 }
