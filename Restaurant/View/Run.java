@@ -64,14 +64,14 @@ public class Run {
     }
 
     private void customerLogin() {
-        System.out.print("Username: ");
-        String username = scanner.nextLine();
+        System.out.print("UserName: ");
+        String userName = scanner.nextLine();
         System.out.print("Password: ");
         String password = scanner.nextLine();
 
         Customer found = null;
         for (Customer customer : UserData.customer) {
-            if (customer.getUserName().equals(username) && customer.checkPassword(password)) {
+            if (customer.getUserName().equals(userName) && customer.checkPassword(password)) {
                 found = customer;
                 break;
             }
@@ -109,31 +109,31 @@ public class Run {
     }
 
     private void customerRegister() {
-        System.out.print("New Username: ");
-        String username = scanner.nextLine();
+        System.out.print("New UserName: ");
+        String userName = scanner.nextLine();
         System.out.print("Password: ");
         String password = scanner.nextLine();
 
         for (Customer customer : UserData.customer) {
-            if (customer.getUserName().equals(username)) {
-                System.out.println("Username already taken.");
+            if (customer.getUserName().equals(userName)) {
+                System.out.println("UserName already taken.");
                 return;
             }
         }
 
-        UserData.customer.add(new Customer(username, password));
+        UserData.customer.add(new Customer(userName, password));
         System.out.println("Registration successful.");
     }
 
     private void chefLogin() {
-        System.out.print("Username: ");
-        String username = scanner.nextLine();
+        System.out.print("UserName: ");
+        String userName = scanner.nextLine();
         System.out.print("Password: ");
         String password = scanner.nextLine();
 
         Chef found = null;
         for (Chef chef : UserData.chef) {
-            if (chef.getUserName().equals(username) && chef.checkPassword(password)) {
+            if (chef.getUserName().equals(userName) && chef.checkPassword(password)) {
                 found = chef;
                 break;
             }
@@ -160,20 +160,20 @@ public class Run {
                 break;
             else if (choice == 1) {
                 System.out.print("Dish Name: ");
-                String name = scanner.nextLine();
+                String Name = scanner.nextLine();
                 System.out.print("Price: ");
                 double price = scanner.nextDouble();
                 scanner.nextLine();
-                service.addDish(name, price);
+                service.addDish(Name, price);
             } else if (choice == 2) {
                 System.out.print("Dish Name: ");
-                String name = scanner.nextLine();
+                String Name = scanner.nextLine();
                 System.out.print("New Name: ");
                 String newName = scanner.nextLine();
                 System.out.print("New Price: ");
                 double newPrice = scanner.nextDouble();
                 scanner.nextLine();
-                service.editDish(name, newName, newPrice);
+                service.editDish(Name, newName, newPrice);
             } else if (choice == 3) {
                 service.viewOrder();
             } else if (choice == 4) {
@@ -191,14 +191,14 @@ public class Run {
     }
 
     private void deliveryLogin() {
-        System.out.print("Username: ");
-        String username = scanner.nextLine();
+        System.out.print("UserName: ");
+        String userName = scanner.nextLine();
         System.out.print("Password: ");
         String password = scanner.nextLine();
 
         Delivery found = null;
         for (Delivery dg : UserData.delivery) {
-            if (dg.getUserName().equals(username) && dg.checkPassword(password)) {
+            if (dg.getUserName().equals(userName) && dg.checkPassword(password)) {
                 found = dg;
                 break;
             }
