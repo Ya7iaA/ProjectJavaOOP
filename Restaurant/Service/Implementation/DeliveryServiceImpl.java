@@ -1,15 +1,11 @@
 package ProjectJavaOOP.Restaurant.Service.Implementation;
 
 import ProjectJavaOOP.Restaurant.Data.OrderData;
-import ProjectJavaOOP.Restaurant.Model.Delivery;
 import ProjectJavaOOP.Restaurant.Model.Order;
 import ProjectJavaOOP.Restaurant.Model.OrderStatus;
 import ProjectJavaOOP.Restaurant.Service.Interfaces.DeliveryService;
 
 public class DeliveryServiceImpl implements DeliveryService {
-
-    public DeliveryServiceImpl(Delivery delivery) {
-    }
 
     @Override
     public void updateOrderStatue(int orderID, OrderStatus orderStatus) {

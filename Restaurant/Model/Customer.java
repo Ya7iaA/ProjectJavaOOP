@@ -28,4 +28,9 @@ public class Customer extends User {
     public List<Order> getCustomerOrder() {
         return customerOrder;
     }
+
+    @Override
+    public String toString() {
+        return getUserName();
+    }
 }

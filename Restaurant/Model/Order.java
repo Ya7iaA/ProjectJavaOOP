@@ -43,7 +43,7 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Order [orderID=" + orderID + ", customer=" + customer + ", dish=" + dish + ", orderQuantity="
-                + orderQuantity + ", orderStatus=" + orderStatus + "]";
+        return "OrderID=" + orderID + ", Customer=" + customer + ", " + dish + ", OrderQuantity="
+                + orderQuantity + ", OrderStatus=" + orderStatus + "\n";
     }
 }
