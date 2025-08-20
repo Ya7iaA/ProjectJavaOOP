@@ -28,9 +28,10 @@ public class Run {
             int choice = scanner.nextInt();
             scanner.nextLine();
 
-            if (choice == 0)
+            if (choice == 0) {
+                System.out.println("Exiting .... ");
                 break;
-
+            }
             if (choice == 1)
                 customerPage();
             else if (choice == 2)
@@ -71,20 +72,20 @@ public class Run {
 
         Customer found = null;
         for (Customer customer : UserData.customer) {
-            if (customer.getUserName().equals(userName) && customer.checkPassword(password)) {
+            if (customer.checkUserName(userName) && customer.checkPassword(password)) {
                 found = customer;
                 break;
             }
         }
 
         if (found == null) {
-            System.out.println("Invalid credentials.");
+            System.out.println("Invalid Account.");
             return;
         }
 
         CustomerServiceImpl service = new CustomerServiceImpl(found);
         while (true) {
-            System.out.println("\n--- Customer Menu ---");
+            System.out.println("\n=== Customer Menu ===");
             System.out.println("1. View Menu");
             System.out.println("2. Make Order");
             System.out.println("0. Logout");
@@ -103,7 +104,8 @@ public class Run {
                 int qty = scanner.nextInt();
                 scanner.nextLine();
                 service.makeOrder(dishName, qty);
-            } else
+            }
+            else
                 System.out.println("Invalid choice.");
         }
     }
@@ -234,6 +236,9 @@ public class Run {
     }
 
     private void seedData() {
+        if (UserData.customer.isEmpty()) {
+            UserData.customer.add(new Customer("ahmed", "123"));
+        }
         if (UserData.chef.isEmpty()) {
             UserData.chef.add(new Chef("chef1", "123"));
         }

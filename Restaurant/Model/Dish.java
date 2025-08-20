@@ -35,6 +35,6 @@ public class Dish {
 
     @Override
     public String toString() {
-        return "DishID=" + dishID + ", DishName=" + dishName + ", DishPrice=" + dishPrice+"\n";
+        return "DishName : " + dishName + ", DishPrice : " + dishPrice;
     }
 }

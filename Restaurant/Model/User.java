@@ -14,6 +14,10 @@ public abstract class User {
         return userName;
     }
 
+    public boolean checkUserName(String userName) {
+        return this.userName.equals(userName);
+    }
+
     public boolean checkPassword(String userPassword) {
         return this.userPassword.equals(userPassword);
     }
